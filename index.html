@@ -1,0 +1,169 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="top50_2020.css" />
+</head>
+
+<body>
+
+
+
+    <div class="top50__wrapper--outermost">
+        <div class="top50table__scrollableContainer">
+            <!-- list name is available at build time -->
+            <table id="top50tableID" data-list-name="@Model.CurrentPage.ListType" data-list-noun="owner"
+                data-list-past-tense="owned">
+                <caption>
+                    <h1>NMHC 50 Largest Apartment Owners</h1>
+                </caption>
+                <thead>
+                    <tr>
+                        <th role="columnheader" class="mobile-only vertAlignMiddle">Company</th>
+                        <th role="columnheader" class="text-center"><span>Owner </span>Rank 2019</th>
+                        <th role="columnheader" class="text-center"><span>Owner </span>Rank 2018</th>
+                        <th role="columnheader" class="min-cell-size--mobile">
+                            <span class="desktop-only">
+                                Company Name
+                            </span>
+
+                        </th>
+                        <th role="columnheader" class="text-right">Units <span>Owned </span>2019</th>
+                        <th role="columnheader" class="text-right">Units <span>Owned </span>2018</th>
+                        <!-- on mobile can we get away with just hiding some columns? Could still sort 1-way-->
+                        <th role="columnheader" class="desktop-only">Corporate Officer</th>
+                        <th role="columnheader"><span>HQ </span> City</th>
+                        <th role="columnheader"><span>HQ</span> State</th>
+                    </tr>
+                </thead>
+                <tbody id="top50tbody">
+                    <tr>
+                        <th class="mobile-only">Starwood Capital Group</th>
+                        <td class="text-center">1</td>
+                        <td class="text-center">11</td>
+                        <td class="min-cell-size--mobile">
+                            <h3 class="table-cell__headline desktop-only">Starwood Capital Group</h3>
+                            <details id="1" data-has-been-fetched="false" data-historical="" data-breakdown="">
+                                <summary> </summary>
+
+                                <div class="top50__row company-details-panel">
+                                    <div class="top50__col">
+                                        <h6>Historical Data</h6>
+                                        <span class="top50__chart"></span>
+                                        <span class="googChart"></span>
+                                    </div>
+                                    <div class="top50__col top50__map">
+                                        <h6>Regions of Operation</h6>
+                                        <span class="googMap"></span>
+                                        <p>caption key</p>
+                                    </div>
+                                    <div class="top50__col top50__info">
+                                        <h6>Coroporate Officer(s)</h6>
+                                        <p>Brennan Huff &amp; Dale Doback</p>
+                                        <h6>Company Website</h6>
+                                        <a class="top50__link link--website" rel="noopener" target="_blank"
+                                            href="https://spacejam.com">https://spacejam.com</a>
+                                        <h6>Other Lists</h6>
+                                        <a class="top50__link">Top 50 Y</a>, <a class="top50__link">Top 50 Z</a>
+                                    </div>
+                                    <div class="top50__col top50__breakdown">
+                                        <h6>Housing Units Breakdown</h6>
+                                    </div>
+
+
+                                </div><!-- end panel-->
+
+
+
+
+                            </details>
+
+                            <div class="EXPANDO">
+
+                            </div>
+                        </td>
+                        <td class="text-right">999,999</td>
+                        <td class="text-right">99,999</td>
+                        <!-- hide officer on mobile -->
+                        <td class="desktop-only">Timothy J. Naughton</td>
+                        <td>Arlington</td>
+                        <td>VA</td>
+                    </tr>
+                    <tr>
+                        <th class="mobile-only">Prestige World Wide</th>
+                        <td class="text-center">2</td>
+                        <td class="text-center">1</td>
+                        <td class="min-cell-size--mobile">
+                            <h3 class="table-cell__headline desktop-only">Prestige World Wide</h3>
+                            <details id="2" data-has-been-fetched="false" data-historical="" data-breakdown="">
+                                <summary> </summary>
+
+                                <div class="top50__row company-details-panel">
+                                    <div class="top50__col">
+                                        <h6>Historical Data</h6>
+                                        <span class="top50__chart"></span>
+                                        <span class="googChart"></span>
+
+                                    </div>
+                                    <div class="top50__col top50__map">
+                                        <h6>Regions of Operation</h6>
+                                        <span class="googMap"></span>
+                                        <p>caption key</p>
+                                    </div>
+                                    <div class="top50__col top50__info">
+                                        <h6>Coroporate Officer(s)</h6>
+                                        <p>Brennan Huff &amp; Dale Doback</p>
+                                        <h6>Company Website</h6>
+                                        <a class="top50__link link--website" rel="noopener" target="_blank"
+                                            href="https://spacejam.com">https://spacejam.com</a>
+                                        <h6>Other Lists</h6>
+                                        <a class="top50__link">Top 50 Y</a>, <a class="top50__link">Top 50 Z</a>
+
+                                    </div>
+                                    <div class="top50__col top50__breakdown">
+                                        <h6>Housing Units Breakdown</h6>
+                                    </div>
+
+
+                                </div><!-- end panel-->
+
+
+
+
+                            </details>
+                            <div class="EXPANDO">
+
+                            </div>
+                        </td>
+                        <td class="text-right">88,888</td>
+                        <td class="text-right">888,888</td>
+                        <td class="desktop-only">Brennan Huff &amp; Dale Doback</td>
+                        <td>Washington</td>
+                        <td>DC</td>
+                    </tr>
+                </tbody>
+                <!--    @if (Model.CurrentPage.Footnote != null) -->
+                <tfoot>
+                    <tr>
+                        <td colspan="100%">
+                            Footer Content Here
+                            <!-- @Html.Raw(Model.CurrentPage.Footnote) -->
+                        </td>
+                    </tr>
+                </tfoot>
+                <!--end if-->
+            </table>
+        </div>
+    </div>
+
+
+
+    <!-- 3kb, vanilla js, no dependencies, well maintained-->
+    <script defer src="tablesort.min.js"></script>
+    <script defer src="https://www.gstatic.com/charts/loader.js"></script>
+    <script defer src="top50_2020.js"></script>
+
+</body>
+
+</html>
