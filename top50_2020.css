@@ -1,0 +1,233 @@
+    @font-face {
+        font-family: 'Metric';
+        src: url('MetricWeb-Regular.woff');
+    }
+
+    :root {
+        --min-touch-target: 64px;
+        /* rough -- can be tweaked */
+        --min-panel-height: 300px;
+        /*current max is 1160*/
+        --max-content-width: 1024px;
+        --nmhcOrange: #d66228;
+        --nmhcTop50Blue: #5a7981;
+        --nmhcTop50GrayDark: #555555;
+        font-size: 10px;
+    }
+
+
+    h3 {
+        color: var(--nmhcOrange);
+        /*no wrap is temporary*/
+        white-space: nowrap;
+    }
+
+
+    h6 {
+        font-size: 1.8rem;
+    }
+
+
+
+    .top50__link {
+        color: inherit;
+        text-decoration: underline;
+    }
+
+    .top50__wrapper--outermost {
+        max-width: var(--max-content-width);
+        margin: 0 auto;
+    }
+
+    .top50table__scrollableContainer {
+        position: relative;
+    }
+
+    table {
+        font-family: 'Metric', Arial, sans-serif;
+        font-size: 1.6rem;
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.18);
+    }
+
+    thead {
+        background-color: var(--nmhcTop50Blue);
+        height: var(--min-touch-target);
+        color: #fff
+    }
+
+    tr {
+        position: relative;
+        height: var(--min-touch-target);
+        vertical-align: top;
+        border-bottom: 1px solid #000;
+    }
+
+    tr:hover,
+    tr:active,
+    tr:focus {
+        background-color: var(--nmhcTop50Blue);
+        color: #fff;
+    }
+
+    tr:hover .table-cell__headline,
+    tr:active .table-cell__headline,
+    tr:focus .table-cell__headline {
+        color: #fff;
+    }
+
+    th,
+    td {
+        padding: 1.6rem;
+    }
+
+    th {
+        vertical-align: middle;
+    }
+
+    /** some th elements lie outside the head **/
+    thead th {
+        /* white-space: nowrap; */
+    }
+
+    details {
+        position: absolute;
+        /* donT specify top because table rows canT contain absolute stuff -- will go all the way to top */
+        /* top: 0; */
+        left: 0;
+        width: 100%;
+    }
+
+    summary {
+        height: var(--min-touch-target);
+        width: 100%;
+        background: transparent;
+        
+        /*half the min-height -- use calc instead*/
+        margin-top: -32px;
+        /* list-style-image: none; */
+    }
+
+    summary:hover {
+        cursor: pointer;
+    }
+
+    /* summary::-webkit-details-marker {
+        background: none;
+        color: transparent;
+    } */
+
+    details[open] {
+        /*background: rgba(0,255,0,.1);*/
+        min-height: var(--min-panel-height);
+    }
+
+
+
+    details[open]+.EXPANDO {
+        margin-bottom: var(--min-panel-height);
+    }
+
+    .company-details-panel {
+       
+        display: flex;
+        min-height: var(--min-panel-height);
+        background-color: var(--nmhcTop50GrayDark);
+        color: #fff;
+        padding: 1.6rem;
+    }
+
+    .top50__col {
+        flex-grow: 1;
+        flex-basis: 25%;
+        /* width: 25%; */
+        overflow: hidden;
+    }
+
+    .table-cell__headline {
+        margin: 0;
+    }
+
+    .vertAlignMiddle {
+        vertical-align: middle !important;
+    }
+
+    /* logical states*/
+
+    [data-historical="hasHistorical"] {}
+
+    [data-historical="none"] {}
+
+    [data-breakdown="hasBreakdown"] {}
+
+
+    [data-breakdown="none"] .top50__breakdown {
+        /* visibility: hidden; */
+    }
+
+    /* end logical states*/
+
+    @media (max-width: 767px) {
+
+        .desktop-only {
+            display: none !important;
+        }
+
+        th,
+        td {
+            padding: 0 .8rem;
+        }
+
+        th.min-cell-size--mobile,
+        td.min-cell-size--mobile {
+            width: 1px;
+            padding: 0;
+        }
+
+        .top50__row {
+            flex-wrap: wrap;
+        }
+
+        .top50__col {
+            width: 50%;
+            flex-basis: 50%;
+        }
+
+        summary {
+            margin-top: 0;
+        }
+
+        th.mobile-only {
+            vertical-align: top;
+        }
+
+    }
+
+    @media (min-width: 768px) {
+        .mobile-only {
+            display: none !important;
+        }
+
+       
+    }
+
+
+    /* styles from sortable */
+    th[role=columnheader]:not(.no-sort) {
+        position: relative;
+        cursor: pointer;
+    }
+
+    th[role=columnheader]:not(.no-sort):after {
+        content: '';
+        position: absolute;
+        border-width: 0 4px 4px;
+        border-style: solid;
+        border-color: #fff transparent;
+        transform: translate(8px, 8px);
+
+    }
+
+    th[aria-sort=ascending]:not(.no-sort):after {
+        border-bottom: none;
+        border-width: 4px 4px 0;
+    }
