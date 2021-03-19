@@ -1,4 +1,4 @@
-# dataTableExpandableWithCharts
+### dataTableExpandableWithCharts
 
 ```javascript
 
